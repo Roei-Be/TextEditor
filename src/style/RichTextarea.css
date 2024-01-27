@@ -1,0 +1,84 @@
+.rich_textarea_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    /* background-color: #ECF0F1; */
+}
+
+.rich_textarea_toolbar_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px;
+    background-color: #ECF0F1;
+}
+
+.rich_textarea_toolbar_wrapper .rich_textarea_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rich_textarea_toolbar_wrapper .rich_textarea_button:hover {
+    background-color: #A9CCE3;
+}
+
+.rich_textarea_toolbar_wrapper .rich_textarea_button_math {
+    font-size: 6px !important;
+}
+
+.rich_textarea_main_wrapper {
+    display: flex;
+    width: 100%;
+    border: 2px solid #AEB6BF;
+}
+
+.rich_textarea_main_wrapper .textarea {
+    width: 100%;
+    height: 20vh;
+    border: none;
+    outline: none;
+    background-color: #ECF0F1;
+    margin: 0;
+    padding: 10px;
+}
+
+.rich_textarea_preview_wrapper {
+    width: 100%;
+    height: 20vh;
+    background-color: #ECF0F1;
+    border: 2px solid #AEB6BF;
+    overflow: auto;
+    padding: 10px;
+}
+
+.rich_textarea_preview_wrapper p {
+    margin: 0 0 5px 0;
+}
+
+/* Inline code */
+.rich_textarea_preview_wrapper code {
+    padding: 4px;
+    background-color: #D6DBDF;
+    border-radius: 5px;
+}
+
+/* Code block */
+.rich_textarea_preview_wrapper pre {
+    /* display: table; */
+    margin: 15px;
+    padding: 10px;
+    background-color: #D6DBDF;
+    border-radius: 10px;
+}
+
+.rich_textarea_preview_wrapper pre code {
+    padding: 0px !important;
+    background-color: transparent !important; /* Prevent double coloring of text in code blocks. */
+}
