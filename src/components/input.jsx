@@ -8,14 +8,14 @@ const Input = ({ value, setValue }) => {
     setValue(event.target.value);
   };
 
-  const applyMarkdown = (MD) => {
+  const applyMarkdown = (MD1, MD2) => {
     // Get the current cursor position
     const cursorPosition = textareaRef.current.selectionStart;
 
     // Insert '**' at the cursor position
     const updatedText =
       value.substring(0, cursorPosition) +
-      MD + MD +
+      MD1 + MD2 +
       value.substring(cursorPosition);
 
     // Update the state with the modified text
@@ -25,8 +25,8 @@ const Input = ({ value, setValue }) => {
     requestAnimationFrame(() => {
         // Move the cursor position between the two instances of MD
         textareaRef.current.setSelectionRange(
-          cursorPosition + MD.length,
-          cursorPosition + MD.length
+          cursorPosition + MD1.length,
+          cursorPosition + MD1.length
         );
     
         // Bring focus back to the text area
@@ -37,8 +37,11 @@ const Input = ({ value, setValue }) => {
   return (
     <>
       <div className="buttons">
-        <button onClick={() => applyMarkdown("**")}>B</button>
-        <button onClick={() => applyMarkdown("*")}>/</button>
+        <button onClick={() => applyMarkdown("**", "**")}>B</button>
+        <button onClick={() => applyMarkdown("*", "*")}>/</button>
+        <button onClick={() => applyMarkdown('""', '""')}>" "</button>
+        <button onClick={() => applyMarkdown("'", "'")}>' '</button>
+        <button onClick={() => applyMarkdown("`", "`")}>` `</button>
       </div>
       <textarea
         ref={textareaRef}
